@@ -34,7 +34,11 @@ export default function Address() {
         
       }) ;
     setIsLodaing(false) ;
-    location.href=data?.session.url ;
+    try {
+      window.location.href=data?.session?.url ;
+    } catch (error) {
+      window.location.href=data?.session.url ;
+    }
       
     }
   
