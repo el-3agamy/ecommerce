@@ -26,7 +26,7 @@ export default function Address() {
         } ,
           params :{
             
-            url : `https://ecommerce-ivory-two-14.vercel.app`
+            url : `https://ecommerce-sand-phi.vercel.app`
 
                 // url : `http://localhost:5173`
                 // url : baseUrl
