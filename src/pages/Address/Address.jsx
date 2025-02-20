@@ -15,7 +15,7 @@ export default function Address() {
 
    async function checkOut() {
     setIsLodaing(true) ;
-    // const baseUrl =  window.location.origin;  //
+    const baseUrl =  window.location.origin;  //
       const {data} = await axios.post(`https://ecommerce.routemisr.com/api/v1/orders/checkout-session/` + cartId ,{
         
           shippingAddress: values
@@ -26,10 +26,10 @@ export default function Address() {
         } ,
           params :{
             
-            url : `https://ecommerce-sand-phi.vercel.app`
+            // url : `https://ecommerce-sand-phi.vercel.app`
 
                 // url : `http://localhost:5173`
-                // url : baseUrl
+                url : baseUrl
           }
         
       }) ;
@@ -37,8 +37,10 @@ export default function Address() {
     try {
       window.location.href=data?.session?.url ;
     } catch (error) {
-      window.location.href=data?.session.url ;
+      window.location.href=data?.session?.url ;
     }
+    console.log(baseUrl);
+    
       
     }
   
