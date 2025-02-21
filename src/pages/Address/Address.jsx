@@ -28,7 +28,7 @@ export default function Address() {
         } ,
           params :{
             
-                url :  `https://ecommerce-sand-phi.vercel.app/`
+                url :   `https://ecommerce-sand-phi.vercel.app`
           }
         
       }) ;
