@@ -28,10 +28,12 @@ export default function Address() {
         } ,
           params :{
             
-                url : `http://localhost:5173` || `https://ecommerce-sand-phi.vercel.app/allorders`
+                url :  `https://ecommerce-sand-phi.vercel.app/allorders`
           }
         
       }) ;
+
+      //  `http://localhost:5173`
       console.log(data);
       
     setIsLodaing(false) ;
