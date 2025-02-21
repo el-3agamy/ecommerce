@@ -14,9 +14,11 @@ export default function Address() {
 
 
    async function checkOut() {
+
     setIsLodaing(true) ;
-    const baseUrl =  window.location.origin;  //
-      const {data} = await axios.post(`https://ecommerce.routemisr.com/api/v1/orders/checkout-session/` + cartId ,{
+  
+    
+      const {data} = await axios.post("https://ecommerce.routemisr.com/api/v1/orders/checkout-session/" + cartId ,{
         
           shippingAddress: values
       
@@ -26,20 +28,16 @@ export default function Address() {
         } ,
           params :{
             
-            // url : `https://ecommerce-sand-phi.vercel.app`
-
-                // url : `http://localhost:5173`
-                url : baseUrl
+                url : `http://localhost:5173` || `https://ecommerce-sand-phi.vercel.app/allorders`
           }
         
       }) ;
+      console.log(data);
+      
     setIsLodaing(false) ;
-    try {
-      window.location.href=data?.session?.url ;
-    } catch (error) {
-      window.location.href=data?.session?.url ;
-    }
-    console.log(baseUrl);
+ 
+      location.href=data?.session.url ;
+    
     
       
     }
@@ -66,11 +64,6 @@ export default function Address() {
   })
  
 
-  
-console.log(values);
-
-
-
   return (
     <div className='sm:w-3/4 mx-auto '>
 
@@ -87,8 +80,8 @@ console.log(values);
               </Button>
             </div>
         </form>
-
     </div>
+    
   )
 }
 
