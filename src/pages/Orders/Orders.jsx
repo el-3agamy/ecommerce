@@ -26,7 +26,7 @@ export default function Orders() {
   return (
     <div>
       {
-        orders.map((singleOrder , index) => {
+        orders?.map((singleOrder , index) => {
           return (
             <div key={singleOrder._id} className="py-14 px-4 md:px-6 2xl:px-20 2xl:container 2xl:mx-auto">
               <div className="flex justify-start item-start space-y-2 flex-col">
