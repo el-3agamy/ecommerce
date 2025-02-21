@@ -35,7 +35,7 @@ function App() {
         { path: "wishlist", element: <ProtectedRoutes><WishList /></ProtectedRoutes> },
         { path: "brands", element: <ProtectedRoutes><Brands /></ProtectedRoutes> },
         { path: "categories", element: <ProtectedRoutes><Categories /></ProtectedRoutes> },
-        { path: "https://ecommerce-sand-phi.vercel.app/allorders", element: <ProtectedRoutes><Orders /></ProtectedRoutes> },
+        { path: "allorders", element: <ProtectedRoutes><Orders /></ProtectedRoutes> },
         { path: "/address/:cartId", element: <ProtectedRoutes><Address /></ProtectedRoutes> },
         { path: "/ProductDetails/:id", element: <ProtectedRoutes> <ProductDetails /></ProtectedRoutes> },
         { path: "*", element: <NotFound /> },
