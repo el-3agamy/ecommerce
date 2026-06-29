@@ -1,48 +1,19 @@
-import axios from 'axios';
-import React, { useEffect , useState } from 'react' ;
+import React from 'react';
 import Product from '../../components/Product/Product';
 import LoadingScreen from '../../components/LoadingScreen/LoadingScreen';
+import useFetchData from '../../hooks/useFetchData';
 
 export default function Home() {
- 
-  const [products, setProducts] = useState([])
-  const [isLoadig, setIsLoading] = useState(true)
+  const { data: products, isLoading } = useFetchData('products');
 
-  useEffect(()=>{
-    getAllProducts()
-  } ,[])
-
- async function getAllProducts(){
-  setIsLoading(true)
-  const {data} = await axios.get("https://ecommerce.routemisr.com/api/v1/products") ;
-  setProducts(data.data)
-  setIsLoading(false)
-  
-
-
- }
-
- if (isLoadig) {
-  return <LoadingScreen />
- }
+  if (isLoading) return <LoadingScreen />;
 
   return (
-    <>
-   
-   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 ">
-    {
-      products.map((product )=>{
-        return(
-                <Product  product={product} key={product._id} />
-
-
-        )
-      })
-    }
-   </div>
-    
-    
-    </>
-
-  )
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      {products?.map((product) => (
+        <Product product={product} key={product._id} />
+      ))}
+    </div>
+  );
 }
+

@@ -10,53 +10,45 @@ import Cart from './pages/Cart/Cart';
 import ProductDetails from './pages/ProductDetails/ProductDetails';
 import { ToastContainer } from 'react-toastify';
 import AuthContextProvider from './contexts/authContext';
-import ProtectedRoutes from './protectedRoutes/ProtectedRoutes';
-import ProtectedAuthRoute from './protectedRoutes/ProtectedAuthRoute';
+import ProtectedRoute from './protectedRoutes/ProtectedRoute';
 import Address from './pages/Address/Address';
 import Orders from './pages/Orders/Orders';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import WishList from './pages/WishList/WishList';
-
-
 import './App.css';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 const queryClient = new QueryClient();
 
+// Defined outside component so the router is never recreated on re-renders
+const router = createBrowserRouter([
+  {
+    path: '',
+    element: <MainLayout />,
+    children: [
+      { index: true, element: <ProtectedRoute><Home /></ProtectedRoute> },
+      { path: 'register', element: <ProtectedRoute requireAuth={false}><Register /></ProtectedRoute> },
+      { path: 'login', element: <ProtectedRoute requireAuth={false}><Login /></ProtectedRoute> },
+      { path: 'cart', element: <ProtectedRoute><Cart /></ProtectedRoute> },
+      { path: 'wishlist', element: <ProtectedRoute><WishList /></ProtectedRoute> },
+      { path: 'brands', element: <ProtectedRoute><Brands /></ProtectedRoute> },
+      { path: 'categories', element: <ProtectedRoute><Categories /></ProtectedRoute> },
+      { path: 'allorders', element: <ProtectedRoute><Orders /></ProtectedRoute> },
+      { path: '/address/:cartId', element: <ProtectedRoute><Address /></ProtectedRoute> },
+      { path: '/ProductDetails/:id', element: <ProtectedRoute><ProductDetails /></ProtectedRoute> },
+      { path: '*', element: <NotFound /> },
+    ],
+  },
+]);
+
 function App() {
-
-  const router = createBrowserRouter([
-    {
-      path: '', element: <MainLayout />, children: [
-        { index: true, element: <ProtectedRoutes><Home /></ProtectedRoutes> },
-        { path: "register", element: <ProtectedAuthRoute><Register /></ProtectedAuthRoute> },
-        { path: 'login', element: <ProtectedAuthRoute><Login /></ProtectedAuthRoute> },
-        { path: "cart", element: <ProtectedRoutes><Cart /></ProtectedRoutes> },
-        { path: "wishlist", element: <ProtectedRoutes><WishList /></ProtectedRoutes> },
-        { path: "brands", element: <ProtectedRoutes><Brands /></ProtectedRoutes> },
-        { path: "categories", element: <ProtectedRoutes><Categories /></ProtectedRoutes> },
-        { path: "allorders", element: <ProtectedRoutes><Orders /></ProtectedRoutes> },
-        { path: "/address/:cartId", element: <ProtectedRoutes><Address /></ProtectedRoutes> },
-        { path: "/ProductDetails/:id", element: <ProtectedRoutes> <ProductDetails /></ProtectedRoutes> },
-        { path: "*", element: <NotFound /> },
-      ]
-    }
-  ])
-
   return (
-    <>
-      <QueryClientProvider client={queryClient}>
-        <AuthContextProvider>
-          <RouterProvider router={router} ></RouterProvider>
-          <ToastContainer />
-          <ReactQueryDevtools />
-        </AuthContextProvider>
-      </QueryClientProvider>
-
-
-
-    </>
-  )
+    <QueryClientProvider client={queryClient}>
+      <AuthContextProvider>
+        <RouterProvider router={router} />
+        <ToastContainer />
+      </AuthContextProvider>
+    </QueryClientProvider>
+  );
 }
 
-export default App
+export default App;
