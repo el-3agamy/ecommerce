@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState , useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import LoadingScreen from '../../components/LoadingScreen/LoadingScreen';
 import Slider from 'react-slick';
@@ -9,7 +9,7 @@ import addToCart from '../../services/cartServices';
 import StarRating from '../../components/StarRating/StarRating';
 import PriceDisplay from '../../components/PriceDisplay/PriceDisplay';
 import useFetchData from '../../hooks/useFetchData';
-
+import axios from 'axios';
 const sliderSettings = {
   dots: true,
   infinite: true,
