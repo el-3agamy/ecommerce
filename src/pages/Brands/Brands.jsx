@@ -2,7 +2,7 @@ import useFetchData from '../../hooks/useFetchData';
 import LoadingScreen from '../../components/LoadingScreen/LoadingScreen';
 
 export default function Brands() {
-  const { data: brands, isLoading } = useFetchData('brands' ,  1,  8);
+  const { data: brands, isLoading } = useFetchData('brands');
 
   if (isLoading) return <LoadingScreen />;
 

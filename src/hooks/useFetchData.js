@@ -25,7 +25,7 @@ const useFetchData = (endpoint, page = 1 , limit = 8) => {
 
   return {
     isLoading,
-    products: data?.data,
+    data: data?.data,
     pagination: data?.metadata, // or paginationResult depending on your API
   };
 };
