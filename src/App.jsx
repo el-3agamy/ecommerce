@@ -5,7 +5,9 @@ import Register from './pages/Register/Register';
 import Login from './pages/Login/Login';
 import NotFound from './pages/NotFound/NotFound';
 import Categories from './pages/Categories/Categories';
+import CategoryProducts from './pages/Categories/CategoryProducts';
 import Brands from './pages/Brands/Brands';
+import BrandProducts from './pages/Brands/BrandProducts';
 import Cart from './pages/Cart/Cart';
 import ProductDetails from './pages/ProductDetails/ProductDetails';
 import { ToastContainer } from 'react-toastify';
@@ -31,7 +33,9 @@ const router = createBrowserRouter([
       { path: 'cart', element: <ProtectedRoute><Cart /></ProtectedRoute> },
       { path: 'wishlist', element: <ProtectedRoute><WishList /></ProtectedRoute> },
       { path: 'brands', element: <ProtectedRoute><Brands /></ProtectedRoute> },
+      { path: 'brands/:brandId/:brandName', element: <ProtectedRoute><BrandProducts /></ProtectedRoute> },
       { path: 'categories', element: <ProtectedRoute><Categories /></ProtectedRoute> },
+      { path: 'categories/:categoryId/:categoryName', element: <ProtectedRoute><CategoryProducts /></ProtectedRoute> },
       { path: 'allorders', element: <ProtectedRoute><Orders /></ProtectedRoute> },
       { path: '/address/:cartId', element: <ProtectedRoute><Address /></ProtectedRoute> },
       { path: '/ProductDetails/:id', element: <ProtectedRoute><ProductDetails /></ProtectedRoute> },
