@@ -24,6 +24,25 @@ const menuItems = [
     ),
   },
   {
+    name: 'Shop',
+    path: '/shop',
+    icon: (
+  <svg
+    className="w-4 h-4"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth={2}
+    viewBox="0 0 24 24"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M3 9l1.5-5h15L21 9M4 9v9a2 2 0 002 2h12a2 2 0 002-2V9M4 9a2 2 0 004 0 2 2 0 004 0 2 2 0 004 0 2 2 0 004 0"
+    />
+  </svg>
+),
+  },
+  {
     name: 'Categories',
     path: '/categories',
     icon: (

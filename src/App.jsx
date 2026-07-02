@@ -18,6 +18,7 @@ import Orders from './pages/Orders/Orders';
 import WishList from './pages/WishList/WishList';
 import './App.css';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import Shop from './pages/Shop/Shop';
 
 const queryClient = new QueryClient();
 
@@ -27,15 +28,16 @@ const router = createBrowserRouter([
     path: '',
     element: <MainLayout />,
     children: [
-      { index: true, element: <ProtectedRoute><Home /></ProtectedRoute> },
-      { path: 'register', element: <ProtectedRoute requireAuth={false}><Register /></ProtectedRoute> },
-      { path: 'login', element: <ProtectedRoute requireAuth={false}><Login /></ProtectedRoute> },
+      { index: true, element: <Home /> },
+      {path : 'shop' , element : <Shop />} ,
+      { path: 'register', element: <Register /> },
+      { path: 'login', element: <Login /> },
       { path: 'cart', element: <ProtectedRoute><Cart /></ProtectedRoute> },
       { path: 'wishlist', element: <ProtectedRoute><WishList /></ProtectedRoute> },
-      { path: 'brands', element: <ProtectedRoute><Brands /></ProtectedRoute> },
-      { path: 'brands/:brandId/:brandName', element: <ProtectedRoute><BrandProducts /></ProtectedRoute> },
-      { path: 'categories', element: <ProtectedRoute><Categories /></ProtectedRoute> },
-      { path: 'categories/:categoryId/:categoryName', element: <ProtectedRoute><CategoryProducts /></ProtectedRoute> },
+      { path: 'brands', element: <Brands /> },
+      { path: 'brands/:brandId/:brandName', element: <BrandProducts /> },
+      { path: 'categories', element: <Categories /> },
+      { path: 'categories/:categoryId/:categoryName', element: <CategoryProducts /> },
       { path: 'allorders', element: <ProtectedRoute><Orders /></ProtectedRoute> },
       { path: '/address/:cartId', element: <ProtectedRoute><Address /></ProtectedRoute> },
       { path: '/ProductDetails/:id', element: <ProtectedRoute><ProductDetails /></ProtectedRoute> },
