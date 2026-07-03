@@ -92,7 +92,7 @@ export default function Shop() {
             <p className="text-sm mt-1">Try adjusting or clearing your filters</p>
           </div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
             {filteredProducts.map((product) => (
               <Product key={product._id} product={product} />
             ))}
