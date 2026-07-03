@@ -12,14 +12,17 @@ import 'slick-carousel/slick/slick-theme.css';
 const HERO_SLIDES = [
   {
     id: 1,
-    title: 'Fresh & Organic Groceries',
-    subtitle: 'Daily Harvest',
-    description: 'Get up to 30% off on fresh organic fruits, vegetables, and pantry essentials delivered directly to your doorstep.',
-    image: 'https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1000&auto=format&fit=crop',
-    actionText: 'Shop Groceries',
-    link: '/categories/6439d5b1c6428a3b265268bb/Electronics', // Fallback or search page
-    gradient: 'from-emerald-950 via-teal-900 to-slate-900',
-    tag: 'Best Deals'
+    title: 'Modern Men’s Fashion',
+    subtitle: 'New Collection',
+    description:
+      'Discover premium clothing, footwear, and accessories designed for every occasion. Elevate your everyday style.',
+    image:
+    "https://images.openai.com/static-rsc-4/hdcH4HPXazTPVmiLLov3IwBR-fj0Mm8OfL6h2dxx4VEva622kaOMQf39MEfhbmEJy1xBsQEcAFBz_eQehIO0kSRR1_-aMgHpgOgrj96exS_FFXXUWM2Td2z_xgCW816VS7gi2teBp-HPU6la1aO_3GFWsjHXHXTBpSsColwU9UpTKg35Ml1oPN1kdFhiHWAc?purpose=fullsize", 
+    // 'https://images.openai.com/static-rsc-4/2MY0R0DUo6smBIveE667L4c4N4EDXxlkVKnok84tyVJv2LrNES5ttMViuscmImRvG4wxCJGoj7-L2j5utXeM3KS7u2v6rw5iaHP9BlKPx9iy6FzUQc4WzqioAQ4YtbXAps5Z2Coo1EieLhDNSosD459rJk1OQxjLVvbajmVfSUW6AZdO_w9gFigxXybeGdQM?purpose=fullsize',
+    actionText: 'Shop Men',
+    link: '/categories/6439d5b90049ad0b52b90048/men',
+    gradient: 'from-slate-950 via-zinc-900 to-stone-900',
+    tag: 'New Arrival',
   },
   {
     id: 2,
@@ -28,7 +31,7 @@ const HERO_SLIDES = [
     description: 'Immerse yourself in crystal clear audio. Explore premium wireless noise-canceling headphones and lifestyle gadgets.',
     image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=1000&auto=format&fit=crop',
     actionText: 'Explore Tech',
-    link: '/categories/6439d5aba990422d34005178/Electronics',
+    link: '/categories/6439d2d167d9aa4ca970649f/Electronics',
     gradient: 'from-blue-950 via-slate-900 to-indigo-950',
     tag: 'New Arrivals'
   },
@@ -39,7 +42,7 @@ const HERO_SLIDES = [
     description: 'Redefine your clothing selection. Discover stylish outerwear, designer accessories, and seasonal collections with exclusive discounts.',
     image: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1000&auto=format&fit=crop',
     actionText: 'Discover Fashion',
-    link: '/categories/6439d2e1c6428a3b265268b2/Women\'s%20Fashion',
+    link: '/categories/6439d58a0049ad0b52b9003f/Women\'s%20Fashion',
     gradient: 'from-rose-950 via-purple-950 to-slate-900',
     tag: 'Trending Now'
   }
